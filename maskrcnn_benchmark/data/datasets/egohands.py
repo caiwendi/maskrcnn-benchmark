@@ -40,8 +40,8 @@ class EgohandsDataset(object):
             box = bbox[:, :-1]
             label = bbox[:, -1]
         else:
-            box = [0.0, 0.0, 0.0, 0.0]
-            label = [-1]
+            box = [[0.0, 0.0, 0.0, 0.0]]
+            label = [0]
         boxlist = BoxList(box, image.size, mode="xyxy")
         classes = torch.tensor(label)
         boxlist.add_field("labels", classes)
